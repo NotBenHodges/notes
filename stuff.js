@@ -9,7 +9,7 @@ var svg = d3.select("body")
             .attr("width",w)
             .attr("height",h);
 
-var circles = svg.selectAll("rect")
+var rects =    svg.selectAll("rect")
                   .data(dataset)
                   .enter()
                   .append("rect")
@@ -41,3 +41,27 @@ var labels = svg.selectAll("text")
                   return h - (d * 4) + 13;
                 })
                 .attr("fill","white");
+
+  var legend = svg.append('rect')
+                  .attr('y',0)
+                  .attr('x',350)
+                  .attr('height',150)
+                  .attr('width',200)
+                  .attr('fill','transparent')
+                  .attr('stroke','black')
+                  .attr('class','legend')
+/*
+  var legendLabels = svg.selectAll('text')
+                        .data(dataset)
+                        .enter()
+                        .append('text')
+                        .text(function(d){
+                          return d;
+                        })
+                        .attr('x',function(d,i){
+                          return d;
+                        })
+                        .attr('y',function(d){
+                          return d;
+                        });
+*/

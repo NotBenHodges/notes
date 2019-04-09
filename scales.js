@@ -1,8 +1,7 @@
 var dataset = d3.json("data.json")
 
 dataset.then(function(data){
-  chartMaker(data);
-  //buttonMaker(data)
+  thingMaker(data);
   //console.log(data.colors[0]);
 });
 
@@ -22,7 +21,8 @@ var buttonMaker = function(data){
 }
 */
 
-var chartMaker = function(data){
+
+var thingMaker = function(data){
   //console.log(data.subjects[0]);
   var height = 500;
   var width = 700;
@@ -41,6 +41,7 @@ var chartMaker = function(data){
               .attr("width",width)
               .attr("height",height);
 
+/*
   var rects = svg.selectAll('rect')
                 .data(data)
                 .enter()
@@ -56,5 +57,7 @@ var chartMaker = function(data){
                   return yScale(data.age);
                 })
                 .attr('fill','blue');
+*/
+
 
 }

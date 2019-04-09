@@ -1,7 +1,8 @@
 var dataset = d3.json("data.json")
 
 dataset.then(function(data){
-  thingMaker(data);
+  //thingMaker(data);
+  //buttonMaker(data);
   //console.log(data.colors[0]);
 });
 
@@ -27,6 +28,8 @@ var thingMaker = function(data){
   var height = 500;
   var width = 700;
 
+  //bar graph scales
+  
   var xScale = d3.scaleLinear()
                   .domain([0,data.length])
                   .range([0,width]);
@@ -59,5 +62,20 @@ var thingMaker = function(data){
                 .attr('fill','blue');
 */
 
-
+/*
+var circles = svg.selectAll('circle')
+                  .data(data)
+                  .enter()
+                  .append('circle')
+                  .attr('x',function(d){
+                    return xScale(d.height);
+                  })
+                  .attr('y',function(d){
+                    return yScale(d.weight);
+                  })
+                  .attr('r',10)
+                  .on('click',function(d){
+                    window.alert(d.name);
+                  });
+                  */
 }
